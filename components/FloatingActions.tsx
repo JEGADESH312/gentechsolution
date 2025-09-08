@@ -1,6 +1,6 @@
 // components/FloatingActions.tsx
 'use client'
-
+const phone_number = '9444341170'
 import React, { useState, useEffect } from 'react'
 import { MessageCircle, Phone, ArrowUp, Mail, Calculator } from 'lucide-react'
 
@@ -76,16 +76,17 @@ const FloatingActions = () => {
           {/* Main WhatsApp Button */}
           <div className="relative">
             <button
-              onClick={() => window.open('https://wa.me/91', '_blank')}
+              onClick={() => window.open(`https://wa.me/91${phone_number}`, '_blank')}
+
               className="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg transition-all duration-200 transform hover:scale-110 flex items-center justify-center relative z-10"
               aria-label="Contact us on WhatsApp"
             >
               <MessageCircle className="h-6 w-6" />
-              
+
               {/* Pulse animation */}
               <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20"></div>
             </button>
-            
+
             {/* Toggle button for quick actions */}
             <button
               onClick={() => setShowQuickActions(!showQuickActions)}
@@ -120,19 +121,18 @@ const FloatingActions = () => {
       )}
 
       {/* Emergency Contact Strip (appears on scroll) */}
-      {showScrollTop && (
+      {/* {showScrollTop && (
         <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-40 animate-fade-in">
           <div className="bg-red-600 text-white px-6 py-2 rounded-full shadow-lg">
             <div className="flex items-center space-x-4 text-sm">
-              <span className="font-medium">🚨 Emergency IT Support:</span>
+              <span className="font-medium">🚨 IT Support:</span>
               <a href="tel:+91" className="hover:underline font-semibold">
-                +91 [Emergency Number]
-              </a>
-              <span className="hidden sm:inline">• Available 24/7</span>
+                +91{phone_number}
+              </a> 
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Floating Offer Banner */}
       <div className="fixed top-1/2 right-0 transform -translate-y-1/2 z-40 animate-slide-in-right animation-delay-2000">
@@ -140,11 +140,15 @@ const FloatingActions = () => {
           <div className="text-center">
             <div className="text-lg font-bold mb-1">🎉 Special Offer!</div>
             <div className="text-sm mb-2">Get 15% OFF on bulk orders</div>
-            <button className="bg-white text-orange-600 px-4 py-1 rounded-full text-sm font-semibold hover:bg-orange-50 transition-colors">
+            <button className="bg-white text-orange-600 px-4 py-1 rounded-full text-sm font-semibold hover:bg-orange-50 transition-colors"
+            
+       onClick={() => window.open(`https://wa.me/91${phone_number}?text=${encodeURIComponent("Hi! I want to claim the 15% offer on bulk orders.")}`, '_blank')}
+       
+>
               Claim Now
             </button>
           </div>
-          
+
           {/* Close button */}
           {/* <button 
             className="absolute -top-2 -left-2 w-6 h-6 bg-white text-orange-600 rounded-full shadow-md hover:bg-orange-50 transition-colors flex items-center justify-center text-sm font-bold"
@@ -156,7 +160,7 @@ const FloatingActions = () => {
       </div>
 
       {/* Live Chat Widget Simulation */}
-      <div className="fixed bottom-24 right-24 z-40">
+      {/* <div className="fixed bottom-24 right-24 z-40">
         <div className="bg-white rounded-lg shadow-2xl p-4 max-w-sm animate-fade-in animation-delay-4000">
           <div className="flex items-center space-x-3 mb-3">
             <div className="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
@@ -168,22 +172,22 @@ const FloatingActions = () => {
                 <div className="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
                 Online now
               </div>
-            </div>
-            {/* <button 
+            </div> */}
+      {/* <button 
               className="ml-auto text-gray-400 hover:text-gray-600"
               onClick={(e) => e.target.closest('.fixed').style.display = 'none'}
             >
               ×
             </button> */}
-          </div>
-          <p className="text-gray-600 text-sm mb-3">
+      {/* </div> */}
+      {/* <p className="text-gray-600 text-sm mb-3">
             Hi! 👋 Need help with hardware rental? I'm here to assist you!
           </p>
           <button className="w-full bg-primary-600 text-white py-2 rounded-lg text-sm font-semibold hover:bg-primary-700 transition-colors">
             Start Chat
-          </button>
-        </div>
-      </div>
+          </button> */}
+      {/* </div>
+      </div> */}
 
       <style jsx>{`
         @keyframes slideInRight {
@@ -207,4 +211,3 @@ const FloatingActions = () => {
 
 export default FloatingActions
 
- 

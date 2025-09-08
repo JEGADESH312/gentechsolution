@@ -65,7 +65,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Phone className="h-4 w-4 text-primary-400 flex-shrink-0" />
-                <span className="text-sm">+91 [Your Number] | WhatsApp Available</span>
+                <span className="text-sm">+91 9444341170 | WhatsApp Available</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Mail className="h-4 w-4 text-primary-400 flex-shrink-0" />
